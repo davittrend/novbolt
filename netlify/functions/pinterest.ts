@@ -1,8 +1,10 @@
 import { Handler } from '@netlify/functions';
 
-const clientId = process.env.PINTEREST_CLIENT_ID;
+const clientId = process.env.PINTEREST_CLIENT_ID || '1507772';
 const clientSecret = process.env.PINTEREST_CLIENT_SECRET;
-const redirectUri = process.env.URL ? `${process.env.URL}/callback` : 'http://localhost:5173/callback';
+const redirectUri = process.env.URL 
+  ? `${process.env.URL}/callback`
+  : 'http://localhost:5173/callback';
 
 const PINTEREST_API_URL = 'https://api-sandbox.pinterest.com/v5';
 
